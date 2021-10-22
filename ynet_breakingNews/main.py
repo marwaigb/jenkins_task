@@ -88,7 +88,7 @@ def parser():
 
 class Handler(http.server.SimpleHTTPRequestHandler):
 	def do_GET(self):
-		os.system("python parser.py")
+		os.system("python main.py")
 		if self.path == '/':
 			self.path = 'index.html'
 		return http.server.SimpleHTTPRequestHandler.do_GET(self)
@@ -96,7 +96,7 @@ class Handler(http.server.SimpleHTTPRequestHandler):
 
 def web():
 	server = socketserver.TCPServer(("", 5000), Handler)
-	print(f'Starting at {server.server_address}')
+	print(f'Starting at http://localhost:5000/')
 	server.serve_forever()
 
 
