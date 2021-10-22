@@ -1,0 +1,24 @@
+pipeline{
+	agent any;
+
+	stages{
+
+		stage('Clone'){
+			steps{
+				git branch: 'master', url: 'https://github.com/marwaigb/jenkins_task.git'
+			}
+		}
+		
+		stage('Run'){
+			steps{
+				sh 'JENKINS_NODE_COOKIE=do_not_kill python3 -m ynet_breakingNews &'
+			}
+		}
+
+		stage('Sending slack'){
+			steps{
+				slackSend channel: '#breakingnews', message: 'Success!'
+			}
+		}
+	}
+}
