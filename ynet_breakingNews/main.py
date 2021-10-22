@@ -11,7 +11,6 @@ URL = "http://www.ynet.co.il/Integration/StoryRss2.xml"
 
 
 def read_url(url=URL):
-
 	res = requests.get(url)
 	doc = lxml.etree.fromstring(res.content)
 	return doc.xpath("//item")
