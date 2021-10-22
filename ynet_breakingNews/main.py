@@ -97,7 +97,7 @@ class Handler(http.server.SimpleHTTPRequestHandler):
 def web():
 	server = socketserver.TCPServer(("", 5000), Handler)
 	print(f'Starting at {server.server_address}')
-	server.serve_forever() # starting the server
+	server.serve_forever()
 
 
 
