@@ -1,6 +1,7 @@
 # jenkins_task
 
-##run the app:
+## run the app:
+
 1.clone the repository
 2.get access to the ynet_breakingNews directory
 3.On cmd run: ./main.py
